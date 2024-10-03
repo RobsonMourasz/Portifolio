@@ -2,12 +2,148 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 :root{
-    --cor-texto: #fff
+    --cor-texto: black;
+    --fundo: aqua; 
+    --texto-footer:white;
+}
+
+.light{
+    --cor-texto: white;
+    --fundo: black; 
+    --texto-footer:rgb(85, 23, 201);
+}
+
+section{
+    padding: 2rem 0;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 body{
-    background-color: aqua;
+    background-color: var(--fundo);
+}
+
+.perfil img{
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.397);
+}
+
+.perfil p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+}
+
+.rede-social .lista .item{
+    padding: 1em 5em;
+    margin: 1em;
+    border: 1px solid white;
+    border-radius: 10rem;
+    list-style-type: none;
+}
+
+
+.light .rede-social .lista .item img{
+    background: white;
+    border: 2px solid white;
+}
+
+.rede-social .lista .item a{
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
+.rede-social .lista .item:hover{
+    /* outline: 5px solid rgba(255, 254, 255,.3); */
+    box-shadow: 0px 0px 15px rgba(0, 2, 0, 0.397);
+}
+
+.light .rede-social .lista .item:hover{
+    /* outline: 5px solid rgba(255, 254, 255,.3); */
+    box-shadow: 0px 0px 15px rgba(255, 254, 255, 0.397);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.light.footer p{
+    color: var(--texto-footer);
+}
+
+.light .footer img{
+    background: white;
+    border: 2px solid white;
+}
+
+.footer a{
+    text-decoration: none;
+    color: var(--texto-footer);
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+#switch{
+    padding: .5rem 0;
+    position: relative;
+
+}
+
+#switch
+span{
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    width: 5rem;
+    height: 2rem;
+    border-radius: 2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#switch
+#btnModo{
+    background-color: blue;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    transform: translateY(-50%);
+    z-index: 1;
+    top: 50%;
+    animation: click-out ease-in .3s forwards;
+}
+
+.light
+#switch
+#btnModo{
+    animation: click-in ease-in .3s forwards;
+}
+
+@keyframes click-in {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 50%;
+    }
+}
+
+@keyframes click-out {
+    0%{
+        left: 50%;
+    }
+    100%{
+        left: 0%;
+    }
 }
