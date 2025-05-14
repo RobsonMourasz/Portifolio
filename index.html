@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Robson Moura - Desenvolvedor Web">
     <meta name="keywords" content="Robson Moura, Desenvolvedor Web, HTML, CSS, JavaScript">
@@ -9,7 +11,8 @@
     <link rel="stylesheet" href="app/css/style.css">
     <title>Robson Moura</title>
 </head>
-<body>
+
+<body id="home">
     <div class="loading"></div>
     <div class="header">
         <div class="logo">Robson Moura</div>
@@ -17,7 +20,7 @@
             <ul class="menu">
                 <li class="lista"><a href="#home">Home</a></li>
                 <li class="lista"><a href="#sobre">Sobre</a></li>
-                <li class="lista"><a href="#servicos">Serviços</a></li>
+                <li class="lista"><a href="#meus_cursos">Cursos</a></li>
                 <li class="lista"> <a href="#contato">Contato</a></li>
             </ul>
         </div>
@@ -34,11 +37,12 @@
                 <img src="app/img/banner1.PNG" alt="Banner" width="250">
             </div>
         </div>
-
+        <div id="sobre"></div>
         <div class="banner-secundary">
             <div class="banner-text">
                 <h1>Sobre Mim</h1>
-                <p>Sou um desenvolvedor web com experiência em HTML, CSS e JavaScript. Estou sempre aprendendo novas tecnologias e buscando melhorar minhas habilidades.</p>
+                <p>Sou um desenvolvedor web com experiência em HTML, CSS e JavaScript. Estou sempre aprendendo novas
+                    tecnologias e buscando melhorar minhas habilidades.</p>
                 <a href="#servicos" class="btn">Veja meus serviços</a>
             </div>
             <div class="banner2">
@@ -46,7 +50,7 @@
             </div>
         </div>
 
-        <div class="title">Meus Cursos</div>
+        <div class="title" id="meus_cursos">Meus Cursos</div>
 
         <div class="minhas-escolas">
             <div class="card">
@@ -111,16 +115,59 @@
 
 
         </div>
+
+        <div class="title" id="contato">Contato</div>
+
+        <div class="contato">
+            <ul class="contato-lista">
+                <li><a target="_blank"
+                        href="https://wa.me/+5534999918179?text=Ola%20Robson%20Vim%20pelo%20site%20que%20você%20criou"><i
+                            class="bi bi-whatsapp"></i> WhatsApp</a></li>
+                <li><a target="_blank"
+                        href="mailto:robsonic10@gmail.com?subject=Ola+Robson+Vim+pelo+site+que+você+criou&body=Fazendo+o+teste+rapido"><i
+                            class="bi bi-threads-fill"></i> E-mail</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/robsonmourasz/"><i class="bi bi-instagram"></i>
+                        Instagram</a></li>
+                <li><a target="_blank" href="https://www.facebook.com/robson.moura.545/"><i class="bi bi-facebook"></i>
+                        Facebook</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/robsonmourasz/"><i class="bi bi-linkedin"></i>
+                        Linkedin</a></li>
+                <li><a target="_blank" href="https://github.com/RobsonMourasz"><i class="bi bi-github"></i> GitHub</a>
+                </li>
+            </ul>
+        </div>
+
     </div><!-- Content -->
 
-    <div class="footer">Site Criado para fins de estudo e conhecimento @robsonmourasz <small>versao 1.1</small></div> <!-- Footer -->
+
+    <div class="footer">Site Criado para fins de estudo e conhecimento @robsonmourasz <small>versao 1.1</small></div>
+    <!-- Footer -->
     <script>
-        (()=>{
-            window.addEventListener("load", function() {
+
+        (() => {
+            const width = document.body.clientWidth;
+
+            window.addEventListener("load", function () {
                 document.querySelector(".loading").style.display = "none";
             });
+
+            window.addEventListener("resize", function () {
+                if (width <= 768) {
+                    let iconsResponsivel = document.querySelectorAll(".contato .contato-lista li a");
+                    iconsResponsivel.forEach((item) => {
+                        let tag = item.querySelector("i");
+                        item.innerHTML = tag.outerHTML;
+                        console.log(tag);
+                    });
+                }
+            });
+
+
+
         })();
+
     </script>
     <script src="app/js/script.js"></script>
 </body>
+
 </html>
