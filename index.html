@@ -10,7 +10,7 @@
     <title>Robson Moura</title>
 </head>
 <body>
-
+    <div class="loading"></div>
     <div class="header">
         <div class="logo">Robson Moura</div>
         <div class="navegacao">
@@ -90,6 +90,13 @@
     </div><!-- Content -->
 
     <div class="footer">Site Criado para fins de estudo e conhecimento @robsonmourasz</div> <!-- Footer -->
+    <script>
+        (()=>{
+            window.addEventListener("load", function() {
+                document.querySelector(".loading").style.display = "none";
+            });
+        })();
+    </script>
     <script src="app/js/script.js"></script>
 </body>
 </html>
