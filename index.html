@@ -149,6 +149,14 @@
 
             window.addEventListener("load", function () {
                 document.querySelector(".loading").style.display = "none";
+                if (width <= 768) {
+                    let iconsResponsivel = document.querySelectorAll(".contato .contato-lista li a");
+                    iconsResponsivel.forEach((item) => {
+                        let tag = item.querySelector("i");
+                        item.innerHTML = tag.outerHTML;
+                        console.log(tag);
+                    });
+                }
             });
 
             window.addEventListener("resize", function () {
