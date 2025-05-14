@@ -129,10 +129,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 10px 0;
     background-color: var(--color-bottom);
 }
 
+.footer >small{
+ font-size: .6em;
+}
 
 body::-webkit-scrollbar{
     background-color: var(--primary-color);
