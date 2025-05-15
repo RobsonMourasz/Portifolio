@@ -25,6 +25,10 @@ body{
     color: var(--text-color);
 }
 
+.remove-conteudo{
+    display: none;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
