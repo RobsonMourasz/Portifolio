@@ -123,20 +123,20 @@
                 <ul class="contato-lista">
                     <li><a target="_blank"
                             href="https://wa.me/+5534999918179?text=Ola%20Robson%20Vim%20pelo%20site%20que%20você%20criou"><i
-                                class="bi bi-whatsapp"></i> WhatsApp</a></li>
+                                class="bi bi-whatsapp" title="WhatsApp"></i> WhatsApp</a></li>
                     <li><a target="_blank"
                             href="mailto:robsonic10@gmail.com?subject=Ola+Robson+Vim+pelo+site+que+você+criou&body=Fazendo+o+teste+rapido"><i
-                                class="bi bi-threads-fill"></i> E-mail</a></li>
+                                class="bi bi-threads-fill" title="Email"></i> E-mail</a></li>
                     <li><a target="_blank" href="https://www.instagram.com/robsonmourasz/"><i
-                                class="bi bi-instagram"></i>
+                                class="bi bi-instagram" title="Instagram"></i>
                             Instagram</a></li>
                     <li><a target="_blank" href="https://www.facebook.com/robson.moura.545/"><i
-                                class="bi bi-facebook"></i>
+                                class="bi bi-facebook" title="Facebook"></i>
                             Facebook</a></li>
                     <li><a target="_blank" href="https://www.linkedin.com/in/robsonmourasz/"><i
-                                class="bi bi-linkedin"></i>
+                                class="bi bi-linkedin" title="Linkedin"></i>
                             Linkedin</a></li>
-                    <li><a target="_blank" href="https://github.com/RobsonMourasz"><i class="bi bi-github"></i>
+                    <li><a target="_blank" href="https://github.com/RobsonMourasz"><i class="bi bi-github" title="GitHub"></i>
                             GitHub</a>
                     </li>
                 </ul>
@@ -152,9 +152,9 @@
     <script>
 
         (() => {
-            const width = document.body.clientWidth;
-
+            
             window.addEventListener("load", function () {
+                let  width = document.body.clientWidth;
                 document.querySelector(".loading").style.display = "none";
                 document.querySelector("#conteudo").classList.remove("remove-conteudo");
                 if (width <= 768) {
@@ -162,18 +162,25 @@
                     iconsResponsivel.forEach((item) => {
                         let tag = item.querySelector("i");
                         item.innerHTML = tag.outerHTML;
-                        console.log(tag);
                     });
                 }
             });
 
             window.addEventListener("resize", function () {
+                let  width = document.body.clientWidth;
                 if (width <= 768) {
+                    console.log("menor que 768");
                     let iconsResponsivel = document.querySelectorAll(".contato .contato-lista li a");
                     iconsResponsivel.forEach((item) => {
                         let tag = item.querySelector("i");
                         item.innerHTML = tag.outerHTML;
-                        console.log(tag);
+                    });
+                }else if (width > 768){
+                    console.log("maior que 768");
+                    let iconsResponsivel = document.querySelectorAll(".contato .contato-lista li a");
+                    iconsResponsivel.forEach((item) => {
+                        let tag = item.querySelector("i");
+                        item.innerHTML = `${tag.outerHTML} ${tag.getAttribute('title')}`; ;
                     });
                 }
             });
